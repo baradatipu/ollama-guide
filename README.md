@@ -32,6 +32,12 @@ Here's how you can contribute:
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+### 👥 Contributors
+
+<a href="https://github.com/baradatipu/ollama-guide/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=baradatipu/ollama-guide" />
+</a>
+
 ### 🌟 Contribution Ideas
 
 - Add installation guides for other operating systems

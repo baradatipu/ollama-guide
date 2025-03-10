@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ollama & Open-webui Installation Guide - Complete Setup Tutorial</title>
+    <meta name="description" content="Comprehensive guide for installing and configuring Ollama and Open-webui on Windows. Learn how to set up AI models and manage them effectively.">
+    <meta name="keywords" content="Ollama, Open-webui, AI models, LLM, installation guide, Windows setup, machine learning, artificial intelligence">
+    <meta name="author" content="Ollama Guide">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ollama & Open-webui Installation Guide">
+    <meta property="og:description" content="Complete guide for installing and managing Ollama and Open-webui on Windows. Step-by-step instructions for AI model setup.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://example.com/ollama-guide">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ollama & Open-webui Installation Guide">
+    <meta name="twitter:description" content="Complete Windows installation guide for Ollama and Open-webui with model management instructions.">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Ollama & Open-webui Installation Guide",
+      "description": "Comprehensive guide for installing and configuring Ollama and Open-webui on Windows",
+      "articleSection": "Software Installation",
+      "keywords": "Ollama, Open-webui, AI models, installation guide, Windows setup",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://example.com/ollama-guide"
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "Ollama & Open-webui",
+        "applicationCategory": "AI Software",
+        "operatingSystem": "Windows",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    }
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #4a9eff;
+        }
+        .code-block {
+            background-color: #0d2137;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #4a9eff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        .copy-btn:hover {
+            opacity: 1;
+        }
+        .command-line {
+            position: relative;
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #0d2137;
+            border-radius: 4px;
+        }
+        .command-line pre {
+            margin-right: 80px;
+        }
+        .command-line .copy-btn {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #e6e6e6;
+        }
+        .note {
+            background-color: #2d4b6d;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        a {
+            color: #4a9eff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ollama & Open-webui Installation Guide</h1>
+
+        <h2>Installing Ollama</h2>
+
+        <h3>Windows Installation</h3>
+        <div class="note">
+            Note: Ollama now has native Windows support! Simply download and run the Windows installer.
+        </div>
+        <p>Download and install Ollama directly from the official website:</p>
+        <p><a href="https://ollama.com/download/OllamaSetup.exe" target="_blank">Download Ollama for Windows</a></p>
+        <div class="note">
+            After installation:
+            <ol>
+                <li>Double-click the installer (OllamaSetup.exe)</li>
+                <li>Follow the installation wizard</li>
+                <li>Open your favorite terminal (Command Prompt or PowerShell)</li>
+                <li>Run <code>ollama run llama2</code> to start using Ollama</li>
+            </ol>
+        </div>
+        <div class="note">
+            Run Ollama from the Start menu or desktop shortcut</li>
+            <li>The Ollama service will start automatically</li>
+            <li>You can use Ollama from Command Prompt or PowerShell</li>
+        </div>
+
+
+        <h2>Installing Open-webui</h2>
+        <h3>Windows Requirements</h3>
+        <ul>
+            <li>Python 3.10 or higher</li>
+            <li>Microsoft Visual C++ 14.0 or greater</li>
+            <li>Windows SDK</li>
+        </ul>
+
+        <h3>Step 1: Install Visual Studio Build Tools</h3>
+        <p>Download and install Visual Studio Build Tools 2022:</p>
+        <p><a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/" target="_blank">Download Visual Studio Build Tools 2022</a></p>
+        <div class="note">
+            During installation, follow these steps:
+            <ol>
+                <li>In the Visual Studio Installer, first select "Desktop development with C++" workload</li>
+                <li>Then click on the "Individual components" tab at the top</li>
+                <li>In the search box, type "MSVC" to filter components</li>
+                <li>Select "MSVC v143 - VS 2022 C++ x64/x86 build tools" for the latest C++ build tools</li>
+                <li>Clear the search box and type "SDK" to filter components</li>
+                <li>Select either "Windows 10 SDK" or "Windows 11 SDK" based on your Windows version</li>
+                <li>Click "Install" to begin installation</li>
+            </ol>
+            <p><strong>Note:</strong> The installer may show many components, but you only need the ones listed above for Open-webui.</p>
+        </div>
+
+        <h3>Step 2: Install Python 3.10 or higher</h3>
+        <p>Download and install Python from the official website:</p>
+        <p><a href="https://www.python.org/downloads/" target="_blank">Download Python</a></p>
+
+        <h3>Step 3: Install Open-webui</h3>
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre>pip install open-webui</pre>
+        </div>
+
+        <h3>Step 4: Run Open-webui</h3>
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre>python -m openwebui</pre>
+        </div>
+
+        <div class="note">
+            After starting Open-webui, access the interface at: http://localhost:8080
+        </div>
+        <h2>Ollama Model Management and Usage</h2>
+        <h3>Windows Command Line Instructions</h3>
+        
+        <div class="note">
+            Important: Make sure Ollama service is running before executing these commands. You can start it from the Windows Start Menu or by running Ollama application.
+        </div>
+
+        <h4>Basic Ollama Commands</h4>
+        <div class="command-line">
+            <pre>ollama list</pre>
+            <button class="copy-btn">Copy</button>
+        </div>
+        <p>Lists all installed models</p>
+
+        <div class="command-line">
+            <pre>ollama pull llama2</pre>
+            <button class="copy-btn">Copy</button>
+        </div>
+        <p>Downloads and installs the Llama 2 model (you can replace 'llama2' with other model names)</p>
+
+        <div class="command-line">
+            <pre>ollama run llama2</pre>
+            <button class="copy-btn">Copy</button>
+        </div>
+        <p>Starts an interactive chat session with the Llama 2 model</p>
+
+        <h3>Step 3: Install Open-webui</h3>
+        <div class="command-line">
+            <pre>pip install open-webui</pre>
+            <button class="copy-btn">Copy</button>
+        </div>
+
+        <h3>Step 4: Run Open-webui</h3>
+        <div class="command-line">
+            <pre>python -m openwebui</pre>
+            <button class="copy-btn">Copy</button>
+        </div>
+
+        <h4>Available Models</h4>
+        <p>Here's a comprehensive list of available models:</p>
+        <div style="margin-bottom: 20px;">
+            <a href="https://ollama.com/models" target="_blank" style="display: inline-block; background-color: #4a9eff; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: bold;">
+                View Latest Models on Ollama.com
+                <span style="margin-left: 5px;">→</span>
+            </a>
+        </div>
+        <div class="code-block" style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; color: #e6e6e6;">
+                <thead>
+                    <tr style="border-bottom: 1px solid #4a9eff;">
+                        <th style="padding: 10px; text-align: left;">Model Name</th>
+                        <th style="padding: 10px; text-align: left;">Size</th>
+                         <th style="padding: 10px; text-align: left;">Run Command</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Moondream 2</td>
+                        <td style="padding: 10px;">829MB</td>
+                        <td style="padding: 10px;"><code>ollama run moondream</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Llama 3.2 (1B)</td>
+                        <td style="padding: 10px;">1.3GB</td>
+                        <td style="padding: 10px;"><code>ollama run llama3.2:1b</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Gemma 2 (2B)</td>
+                        <td style="padding: 10px;">1.6GB</td>
+                        <td style="padding: 10px;"><code>ollama run gemma2:2b</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Llama 3.2</td>
+                        <td style="padding: 10px;">2.0GB</td>
+                        <td style="padding: 10px;"><code>ollama run llama3.2</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Phi 4 Mini</td>
+                        <td style="padding: 10px;">2.5GB</td>
+                        <td style="padding: 10px;"><code>ollama run phi4-mini</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Code Llama</td>
+                        <td style="padding: 10px;">3.8GB</td>
+                        <td style="padding: 10px;"><code>ollama run codellama</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Llama 2 Uncensored</td>
+                        <td style="padding: 10px;">3.8GB</td>
+                        <td style="padding: 10px;"><code>ollama run llama2-uncensored</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Mistral</td>
+                        <td style="padding: 10px;">4.1GB</td>
+                        <td style="padding: 10px;"><code>ollama run mistral</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Neural Chat</td>
+                        <td style="padding: 10px;">4.1GB</td>
+                        <td style="padding: 10px;"><code>ollama run neural-chat</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">LLaVA</td>
+                        <td style="padding: 10px;">4.5GB</td>
+                        <td style="padding: 10px;"><code>ollama run llava</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">DeepSeek-R1</td>
+                        <td style="padding: 10px;">4.7GB</td>
+                        <td style="padding: 10px;"><code>ollama run deepseek-r1</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Llama 3.1</td>
+                        <td style="padding: 10px;">4.7GB</td>
+                        <td style="padding: 10px;"><code>ollama run llama3.1</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Granite-3.2</td>
+                        <td style="padding: 10px;">4.9GB</td>
+                        <td style="padding: 10px;"><code>ollama run granite3.2</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Gemma 2 (27B)</td>
+                        <td style="padding: 10px;">16GB</td>
+                        <td style="padding: 10px;"><code>ollama run gemma2:27b</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">QwQ</td>
+                        <td style="padding: 10px;">20GB</td>
+                        <td style="padding: 10px;"><code>ollama run qwq</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Llama 3.3</td>
+                        <td style="padding: 10px;">43GB</td>
+                        <td style="padding: 10px;"><code>ollama run llama3.3</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Llama 3.2 Vision (90B)</td>
+                        <td style="padding: 10px;">55GB</td>
+                        <td style="padding: 10px;"><code>ollama run llama3.2-vision:90b</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">Llama 3.1 (405B)</td>
+                        <td style="padding: 10px;">231GB</td>
+                        <td style="padding: 10px;"><code>ollama run llama3.1:405b</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #2d4b6d;">
+                        <td style="padding: 10px;">DeepSeek-R1 (671B)</td>
+                        <td style="padding: 10px;">404GB</td>
+                        <td style="padding: 10px;"><code>ollama run deepseek-r1:671b</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Advanced Commands</h4>
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre>ollama rm llama2</pre>
+        </div>
+        <p>Removes a model from your system</p>
+
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre>ollama serve</pre>
+        </div>
+        <p>Starts the Ollama API server (usually not needed as it runs automatically)</p>
+
+        <h2>Ollama Command Line Reference</h2>
+        <h3>Basic Usage</h3>
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre>ollama [flags]
+ollama [command]</pre>
+        </div>
+
+        <h3>Server Management Commands</h3>
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre>ollama serve       # Start the Ollama server
+ollama ps          # List running models
+ollama stop        # Stop a running model</pre>
+        </div>
+        <p>Use these commands to manage the Ollama server and running model instances.</p>
+
+        <h3>Model Management Commands</h3>
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre>ollama list        # List all installed models
+ollama pull        # Pull a model from a registry
+ollama push        # Push a model to a registry
+ollama rm          # Remove a model
+ollama cp          # Copy a model
+ollama show        # Show information for a model</pre>
+        </div>
+        <p>These commands help you manage your local model collection.</p>
+
+        <h3>Model Creation and Execution</h3>
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre>ollama create      # Create a model from a Modelfile
+ollama run         # Run a model</pre>
+        </div>
+        <p>Use these commands to create custom models and run interactive sessions.</p>
+
+        <h3>Help and Version</h3>
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre>ollama --help      # Show help information
+ollama -v          # Show version information
+ollama [command] --help  # Get help for specific commands</pre>
+        </div>
+        <p>Access help documentation and version information with these commands.</p>
+
+        <h2>Setting up Open-webui with Ollama</h2>
+        <h3>Configuration Steps</h3>
+        
+        <div class="note">
+            Before starting Open-webui, ensure that:
+            <ul>
+                <li>Ollama is running and accessible at http://localhost:11434</li>
+                <li>You have installed all the required dependencies (Python 3.10+, Visual C++ Build Tools)</li>
+            </ul>
+        </div>
+
+        <script>
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const pre = button.parentElement.querySelector('pre');
+                    navigator.clipboard.writeText(pre.textContent);
+                    
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied!';
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                    }, 2000);
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

@@ -58,6 +58,7 @@ Tipu 😊
 
 - [Ollama](https://ollama.com)
 - [Open-webui](https://github.com/open-webui/open-webui)
+- [Open WebUI - pypi.org](https://pypi.org/project/open-webui/)
 - All contributors who help improve this guide
 
 ---

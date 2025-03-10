@@ -1,7 +1,7 @@
 # Ollama & Open-webui Installation Guide 🤖
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/baradatipu/ollama-guide/issues)
 
 📱 **Live Demo:** [https://baradatipu.github.io/ollama-guide/](https://baradatipu.github.io/ollama-guide/)
